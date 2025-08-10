@@ -2,14 +2,17 @@
 #include "include/FlowDetector.h"
 #include "include/utils.h"
 
-int main() 
+int main(int argc, char* argv[]) 
 {
-    std::string input_dir = "C:\\Users\\Михаил\\Desktop\\Магистратура\\test\\data_of\\data_of";
-    std::string output_dir = "C:\\Users\\Михаил\\Desktop\\Магистратура\\test\\result";
+    if(argc != 3)
+        return -1;
+
+    std::string input_dir = argv[0];
+    std::string output_dir = argv[1];
 
     std::vector <cv::String > filenames = get_files(input_dir);
 
-    FlowDetector flow_detector = FlowDetector("C:\\Users\\Михаил\\Downloads\\yolo11n.onnx", cv::Size(80, 80), 25);
+    FlowDetector flow_detector = FlowDetector(argv[2], cv::Size(80, 80), 25);
 
     if (filenames.empty()) {
         std::cerr << "No image files found in " << input_dir << std::endl;
