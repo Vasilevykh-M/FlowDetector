@@ -3,7 +3,7 @@
 #include <opencv2/dnn.hpp>
 #include <iostream>
 #include <string>
-#include "include/FlowDetector.h"
+#include "FlowDetector.h"
 
 FlowDetector::FlowDetector(const std::string& modelPath, cv::Size win_size, int grid_size) : win_size(win_size), grid_size(grid_size)
 {

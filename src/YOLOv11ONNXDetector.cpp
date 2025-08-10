@@ -2,7 +2,7 @@
 #include <opencv2/opencv.hpp>
 #include <opencv2/dnn.hpp>
 #include <iostream>
-#include "include/YOLOv11ONNXDetector.h"
+#include "YOLOv11ONNXDetector.h"
 
 YOLOv11ONNXDetector::YOLOv11ONNXDetector(
     const std::string& modelPath,
